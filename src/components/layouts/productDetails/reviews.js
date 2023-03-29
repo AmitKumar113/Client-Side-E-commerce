@@ -19,9 +19,8 @@ export default function Reviews(props) {
     try{
 
         const config = { headers: {"Content-Type": "application/json","auth-token": authToken}};
-    
         const { data } =  await axios.post(
-              `http://localhost:5500/product/${props.id}/addReview`,
+              `${process.env.REACT_APP_SERVER_URL}/product/${props.id}/addReview`,
               {rating, comment},
               config
             );

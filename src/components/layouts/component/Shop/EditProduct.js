@@ -51,7 +51,7 @@ export default function EditProduct() {
       // console.log({myForm})
       try{
           await axios.put(
-          `http://localhost:5500/product/${id}/edit`,
+          `${process.env.REACT_APP_SERVER_URL}/product/${id}/edit`,
             myForm,
             config
           );
@@ -97,10 +97,11 @@ export default function EditProduct() {
             action="/addProduct"
             method="POST"
             enctype="multipart/form-data"
-            className="flex-box-column [&>*]:w-2/3 [&>*]:h-12 [&>*]:my-1 [&>*]:px-6"
+            className="flex-box-column [&>*]:w-2/3 [&>input]:h-12 [&>*]:my-1 [&>input]:px-6"
             onSubmit={handleSubmitChanges}
             // onChange={handleChange}
           >
+            <label for="name">Product Title: </label>
             <input
               id="name"
               type="text"
@@ -111,6 +112,7 @@ export default function EditProduct() {
               // value={name}
               // onChange={handleChange}
               ></input>
+            <label for="name">Price: </label>
             <input
               type="number"
               name="price"
@@ -120,6 +122,7 @@ export default function EditProduct() {
               // onChange={handleChange}
               // value={price}
               ></input>
+            <label for="Stock">Stock: </label>
             <input
               type="number"
               name="Stock"
@@ -148,6 +151,7 @@ export default function EditProduct() {
                 );
               })}
             </select> */}
+            <label for="description">Description:</label>
             <textarea
               id="description"
               placeholder="Product Desription"
@@ -157,7 +161,7 @@ export default function EditProduct() {
               // onChange={handleChange}
               // value={description}
             ></textarea>
-            <button className="w-full h-full bg-green-600" type="submit">
+            <button className="w-full bg-green-600 h-12" type="submit">
                Submit Changes
             </button>
           </form>

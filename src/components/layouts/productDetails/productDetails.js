@@ -32,6 +32,9 @@ const ProductDetails = () =>{
       }
     
     useEffect(()=>{
+        console.log("product details")
+        console.log({product})
+        console.log({id})
         dispatch(getProduct(id))
     },[])
 

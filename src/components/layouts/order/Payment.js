@@ -45,7 +45,7 @@ export default function Payment() {
 
       console.log(orderItems);
       await axios.post(
-        `http://localhost:5500/placeOrder`,
+        `${process.env.REACT_APP_SERVER_URL}/placeOrder`,
         { shippingInfo, orderItems, user: user._id },
         config
       );
@@ -64,26 +64,26 @@ export default function Payment() {
   return (
     <>
       <StepsCount op1={80} op2={80} op3={80} />
-      <div className=" flex flex-col justify-center items-center">
+      <div className=" flex flex-col items-center h-[80vh]">
         <div>
-          <p className="text-2xl">Payment</p>
+          <p className="text-2xl my-4">Payment</p>
         </div>
 
-        <div className="w-1/3">
-          <ul className="w-full my-4">
+        <div className="flex flex-col w-2/5 h-[75%] p-4 bg-slate-300">
+          <ul className="w-full my-4 flex-1">
             <li className="w-full my-1">
-              <label className="flex w-full py-4 border cursor-pointer">
+              <label className="flex w-full py-4 border cursor-pointer bg-white">
                 <input
                   type="radio"
                   name="payment-option"
                   value="A"
-                  className="mx-4 cursor-pointer"
+                  className="mx-4 cursor-pointer "
                 />
                 <span className="text-lg">Pay Later</span>
               </label>
             </li>
             <li className="w-full my-1 cursor-not-allowed">
-              <label className="flex w-full py-4 border cursor-not-allowed">
+              <label className="flex w-full py-4 border cursor-not-allowed bg-white">
                 <input
                   type="radio"
                   name="payment-option"
@@ -96,7 +96,7 @@ export default function Payment() {
               </label>
             </li>
             <li className="w-full my-1">
-              <label className="flex w-full py-4 border cursor-not-allowed">
+              <label className="flex w-full py-4 border cursor-not-allowed bg-white">
                 <input
                   type="radio"
                   name="payment-option"
@@ -108,7 +108,7 @@ export default function Payment() {
               </label>
             </li>
           </ul>
-          <div className="flex h-12 mx-2 my-2 justify-between">
+          <div className="flex h-12 justify-between">
             <Link to="/order/shipping-details" className="w-1/4">
               <div className="bg-slate-700/40 w-full h-full text-center flex justify-center items-center cursor-pointer">
                 Back
@@ -118,7 +118,7 @@ export default function Payment() {
               className={`bg-[${COLORS.MAIN_THEME_COLOR}] w-1/4 h-full text-center flex justify-center items-center cursor-pointer`}
               onClick={handleProceedBtn}
             >
-              Payment
+              Proceed
             </div>
             {/* <button type="submit" className="">Proceed</button> */}
           </div>

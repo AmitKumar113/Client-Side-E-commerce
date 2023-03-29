@@ -31,7 +31,7 @@ export const addToCart = (productId) => async(dispatch) =>{
 try{
 
     const { data } =  await axios.get(
-          `http://localhost:5500/product/${productId}`,
+          `${process.env.REACT_APP_SERVER_URL}/product/${productId}`,
           config
         );
 

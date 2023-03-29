@@ -8,7 +8,7 @@ export async function getAllProducts(dispatch){
     dispatch({ type : 'FETCH_ALL_PRODUCTS_REQUEST' }) 
 
     const { data } =  await axios.get(
-          `http://localhost:5500/all-products`,
+          `${process.env.REACT_APP_SERVER_URL}/all-products`,
           config
         );
 
@@ -26,10 +26,12 @@ export const getProduct =(productId) => async (dispatch) => {
 
     dispatch({  type : 'FETCH_PRODUCT_REQUEST'})
     const { data } =  await axios.get(
-          `http://localhost:5500/product/${productId}`,
+          `${process.env.REACT_APP_SERVER_URL}/product/${productId}`,
+         //  `${process.env.REACT_APP_SERVER_URL}/product/6423d7eec6bed12df5a9acb7`,
           config
         );
 
+        console.log("REQUEST FAIL")
            dispatch({
               type : 'FETCH_PRODUCT',
               payload : data.product
@@ -46,7 +48,7 @@ export const addReview = ({productId, rating, comment}) => async(dispatch)=>{
                      }};
 
     const { data } =  await axios.get(
-          `http://localhost:5500/product/${productId}/addReview`,
+          `${process.env.REACT_APP_SERVER_URL}/product/${productId}/addReview`,
            {rating, comment},
            config
         );
@@ -69,7 +71,7 @@ export const getSellerProducts =(userId) => async (dispatch) => {
    dispatch({  type : 'FETCH_SHOP_PRODUCTS_REQUEST'})
       console.log("first")
       const { data } =  await axios.get(
-         `http://localhost:5500/shop`,
+         `${process.env.REACT_APP_SERVER_URL}/shop`,
          config
        );
 

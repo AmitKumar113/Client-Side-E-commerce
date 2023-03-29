@@ -8,12 +8,14 @@ const initialState = {
     cart : {
        cartSubTotal :  JSON.parse(localStorage.getItem('cart-subtotal')) || 0,
        cartItems : JSON.parse(localStorage.getItem('cart-items')) || []
+    },
+    user : {
+        isAuthenticated : false,
+        user : {}
     }
-    // user : {
-    //     isAuthenticated : false,
-    //     user : {}
-    // }
 }
 
 export const store = createStore(rootReducer, initialState,composedEnhancer);
+console.log('store.getState()')
+console.log(store.getState())
 // export store

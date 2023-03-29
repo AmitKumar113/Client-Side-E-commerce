@@ -83,7 +83,7 @@ dispatch(getSellerProducts(user._id))
       </div>
       {
         // console.log(user)
-        isAuthenticated==true && user.role=="seller" ? (
+        isAuthenticated && user && user.role=="seller" ? (
           <AddProductBtn/>
         ) : (<></>)
       }

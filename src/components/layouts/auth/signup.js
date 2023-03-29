@@ -57,7 +57,7 @@ function Signup() {
 
     try{
         await axios.post(
-          `http://localhost:5500/signup`,
+          `${process.env.REACT_APP_SERVER_URL}/signup`,
           myForm,
           config
         );

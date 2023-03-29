@@ -10,6 +10,9 @@ export const shopReducer = (state={}, action)=>{
             loading : false,
             products : action.payload
         }
-        default : return { ...state};
+        default : 
+            console.log("shop")
+            console.log({state})
+            return { ...state};
     }
 }

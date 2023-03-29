@@ -1,4 +1,5 @@
-export const userReducer = (state = { user :{} } , action)=>{
+// export const userReducer = (state = { user :{ isAuthenticated: false, user: {} } } , action)=>{
+export const userReducer = (state={} , action)=>{
     switch(action.type){
         case 'SET_USER' : 
         return {
@@ -22,6 +23,8 @@ export const userReducer = (state = { user :{} } , action)=>{
             error : null
         }
         
-        default : return state;
+        default : 
+            console.log({state}) 
+            return state;
     }
 }

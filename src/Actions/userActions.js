@@ -7,7 +7,7 @@ export const getUser = (user) => async (dispatch) =>{
     // console.log({user})
     try{
         const { data } = await axios.post(
-          `http://localhost:5500/login`,
+          `${process.env.REACT_APP_SERVER_URL}/login`,
            user,
            config
         );
@@ -39,7 +39,7 @@ export async function setUserByAuthtoken(dispatch){
     const config = { headers: { "Content-Type": "application/json" , "auth-token" : authToken} };
     try{
             const { data } = await axios.get(
-          `http://localhost:5500/user-auth`,
+          `${process.env.REACT_APP_SERVER_URL}/user-auth`,
            config
         );
     

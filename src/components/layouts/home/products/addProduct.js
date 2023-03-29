@@ -33,7 +33,7 @@ export default function AddProduct() {
 
     console.log("image"+ image)
            await axios.post(
-              `http://localhost:5500/addProduct`,
+              `${process.env.REACT_APP_SERVER_URL}/addProduct`,
                myForm,
                config
         );
