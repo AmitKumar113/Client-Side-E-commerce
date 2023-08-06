@@ -15,7 +15,7 @@ export default function Products() {
 
     {loading ? (<Loader/>):(
         
-          <div className='w-4/5'>
+          <div className='w-full md:w-4/5'>
              <div className={`w-full h-[50vh] flex items-center bg-[url(${cartPic})] bg-center bg-cover mb-2`} >
                 <div className='flex flex-col ml-14'>
                   <span className='text-2xl w-fit my-2'>WELCOME!</span>

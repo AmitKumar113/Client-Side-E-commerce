@@ -11,15 +11,17 @@ export default function CartItems() {
 
     return (
         <div className='flex flex-1 flex-wrap justify-center  '>
-            <div className='w-11/12 '>
-                <div className='flex border-b-[1px] my-2 py-2'>
-                    <span className='flex-1 text-right text-xl'>Cart Subtotal: ₹</span>
-                    <span className='mr-3 text-2xl'>{cart.cartSubTotal}</span>
+            <div className='w-full   md:w-11/12'>
+                <div className='flex flex-row border-b-[1px] my-2 py-2'>
+                    <div className='flex-1 text-right'>
+                        <span className='hidden md:inline text-xl'>Cart Subtotal: </span>
+                        <span className='mr-3 text-2xl'>₹{cart.cartSubTotal}</span>
+                    </div>
                     {
                     cart.cartItems.length>0 ?(
-                        <Link to={'/order/order-summary'}><div className={`bg-[${COLORS.MAIN_THEME_COLOR}] cursor-pointer px-3 py-1 mx-4 text-xl`}>Order</div></Link>
+                        <Link to={'/order/order-summary'} ><div className={`bg-[${COLORS.MAIN_THEME_COLOR}] cursor-pointer px-3 py-1 mx-4 text-xl w-fit`}>Order</div></Link>
                     ):(
-                        <div className={`bg-[${COLORS.MAIN_THEME_COLOR}] cursor-pointer px-3 py-1 mx-4 text-xl`} onClick={()=>displayActionMessage("No item!","error")  }>Order</div>
+                        <div className={`bg-[${COLORS.MAIN_THEME_COLOR}] cursor-pointer px-3 py-1 mx-4 text-xl w-fit`} onClick={()=>displayActionMessage("No item!","error")  }>Order</div>
                     )
                     }
                 </div>

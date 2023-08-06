@@ -92,22 +92,22 @@ export default function ConfirmShippingInfo() {
     <div>
       <StepsCount op1={80} op2={80} op3={0}/>
       <div className="text-2xl text-center my-4">Confirm Shipping Details</div>
-      <div className="flex justify-center h-[60vh]">
+      <div className="flex justify-center min-h-[60vh]">
         <form
           onSubmit={(e) => handleProceedBtn(e)}
           onChange={() => changeShppingInfo()}
-          className="flex flex-col w-1/2 p-4 bg-slate-300 h-full"
+          className="flex flex-col w-full md:w-3/4 lg:w-1/2 p-4 bg-slate-300 h-full"
         >
-          <div className="flex [&>*]:py-3 [&>*]:px-1 [&>*]:flex-1 box-border [&>*]:border-[1px] [&>*]:border-gray-600 m-3">
-            <input type="text" name="address" placeholder="Address" className="mr-2" required></input>
+          <div className="flex flex-wrap flex-col md:flex-row [&>*]:py-3 [&>*]:px-1 [&>*]:flex-1 box-border [&>*]:border-[1px] [&>*]:border-gray-600 m-3 gap-3">
+            <input type="text" name="address" placeholder="Address" required></input>
             <input type="text" name="city" placeholder="City" required></input>
           </div>
-          <div className="flex [&>*]:py-3 [&>*]:px-1 [&>*]:flex-1 box-border [&>*]:border-[1px] [&>*]:border-gray-600 m-3">
-            <input type="text" name="country" placeholder="Country" className="mr-2" required></input>
+          <div className="flex flex-wrap flex-col md:flex-row [&>*]:py-3 [&>*]:px-1 [&>*]:flex-1 box-border [&>*]:border-[1px] [&>*]:border-gray-600 m-3  gap-3">
+            <input type="text" name="country" placeholder="Country" required></input>
             <input type="text" name="state" placeholder="State" required></input>
           </div>
-          <div className="flex [&>*]:py-3 [&>*]:px-1 [&>*]:flex-1 box-border [&>*]:border-[1px] [&>*]:border-gray-600 m-3">
-            <input type="number" name="pincode" placeholder="Pin code" className="mr-2" required></input>
+          <div className="flex flex-wrap flex-col md:flex-row [&>*]:py-3 [&>*]:px-1 [&>*]:flex-1 box-border [&>*]:border-[1px] [&>*]:border-gray-600 m-3 gap-3">
+            <input type="number" name="pincode" placeholder="Pin code" required></input>
             <input type="number" name="phoneNo" placeholder="Phone No" required></input>
           </div>
           <div className=" flex items-end flex-1">

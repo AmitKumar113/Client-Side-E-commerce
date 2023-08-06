@@ -48,10 +48,6 @@ dispatch(getSellerProducts(user._id))
         </ProtectedRoute>
       } />
       
-      {/* <Route element={<ProtectedRoute isAuthenticated={isAuthenticated} isAdminRoute={true} isAdmin={user.role=='seller'?true:false}/>} >
-          <Route exact path="/addProduct" element={<AddProduct/>}/>
-          <Route exact path="/profile" element={<Profile/>}/> //this not admin route
-      </Route> */}
       
       {/* // can use outlet in sign and login route - if authorised already navigate to home  */}
       

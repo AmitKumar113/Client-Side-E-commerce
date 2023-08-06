@@ -18,16 +18,11 @@ export default function Login() {
       password: document.querySelector('[name="password"]').value
     };
 
-    // console.log(error)
-    dispatch(getUser(user))
-    
-    // window.location.href = '/'
-    // e.target.reset()
+    dispatch(getUser(user)) 
   }
 
   useEffect(()=>{
     if(isAuthenticated){
-      // console.log({navigate})
       if (navigate.length >= 1)
           navigate(-1)
      else navigate('/')
@@ -37,8 +32,7 @@ export default function Login() {
 
   return (
     <div className='h-[80vh] flex justify-center items-center'>
-      <div className='login-container flex flex-col w-1/4 h-3/4 pt-4 bg-slate-300'>
-
+      <div className='login-container flex flex-col w-full m-2 md:w-1/4 h-3/4 pt-4 bg-slate-300'>
       <span className='text-center text-3xl py-8'>Login</span>
       { error? (<div className='text-center h-4 text-xs text-red-800'>{error}</div>):(<div className='h-4'></div>)}
       <form className='flex-box-column [&>*]:w-4/5 [&>*]:h-12 [&>*]:my-1 [&>*]:px-2' onSubmit={HandleLogin}>

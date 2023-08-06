@@ -66,8 +66,6 @@ function Signup() {
         console.log({error})
         displayActionMessage("No Internet", "info")
     }
-    //can we validate length of input in tag only ?
-    // console.log({ data });
     
     if (navigate.length >= 2)
           navigate(-2)
@@ -76,8 +74,8 @@ function Signup() {
   };
 
   return (
-    <div className="min-h-[80vh] flex justify-center items-center my-12">
-      <div className=" flex flex-col justify-center w-1/3 pt-4 bg-slate-300">
+    <div className=" md:min-h-[80vh] flex justify-center items-center my-12">
+      <div className=" flex flex-col justify-center w-full md:w-1/3 pt-4 bg-slate-300">
         <span className="text-center text-3xl py-4">Signup</span>
         <div className=" flex justify-center ">
           <div className={`w-24 h-24 bg-slate-500 rounded-full bg-[url(${avatarPreview})] bg-cover bg-center`}>

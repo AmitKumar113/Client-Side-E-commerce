@@ -69,7 +69,7 @@ export default function Payment() {
           <p className="text-2xl my-4">Payment</p>
         </div>
 
-        <div className="flex flex-col w-2/5 h-[75%] p-4 bg-slate-300">
+        <div className="flex flex-col w-full md:w-2/5 h-[75%] p-4 bg-slate-300">
           <ul className="w-full my-4 flex-1">
             <li className="w-full my-1">
               <label className="flex w-full py-4 border cursor-pointer bg-white">

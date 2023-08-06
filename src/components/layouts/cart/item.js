@@ -30,11 +30,11 @@ export default function Item(props) {
 
 
     return (
-    <div className='border-[1px] border-gray-600/40 flex m-1 p-2 justify-center w-[45%]'>
-        <div className={`bg-[url(${image_url})]  bg-center bg-cover border-2 w-2/5 h-60`}>
+    <div className='border-[1px] border-gray-600/40 flex flex-col md:flex-row m-1 p-2 justify-center w-full md:w-[45%]'>
+        <div className={`bg-[url(${image_url})]  bg-center bg-cover border-2 w-full md:w-2/5 h-60`}>
             <Link to={`/product/details/${id}`}><div className='w-full h-full'></div></Link>
         </div>
-        <div className='flex flex-col  w-3/5 px-4'>
+        <div className='flex flex-col w-full md:w-3/5 px-4'>
             <div className='flex-1'>
                 <p className='text-2xl '>{name}</p>
                 <div className='flex'>

@@ -22,7 +22,7 @@ export default function CategoryPage() {
     <div>
     <div className=' flex  justify-center mt-4'>
         <div className='w-4/5'>
-            <ul className={`flex justify-center [&>*]:p-2 [&>*]:cursor-pointer [&>*:hover]:bg-[${COLORS.MAIN_THEME_COLOR}] [&>*]:border-[1px]` }>
+            <ul className={`flex flex-wrap justify-center [&>*]:p-2 [&>*]:cursor-pointer [&>*:hover]:bg-[${COLORS.MAIN_THEME_COLOR}] [&>*]:border-[1px]` }>
                 <Link to={`/product/${CATEGORIES[0]}`}><li className='focus:bg-green-600 '>{CATEGORIES[0].toUpperCase()}</li></Link>
                 <Link to={`/product/${CATEGORIES[1]}`}><li>{CATEGORIES[1].toUpperCase()}</li></Link>
                 <Link to={`/product/${CATEGORIES[2]}`}><li>{CATEGORIES[2].toUpperCase()}</li></Link>

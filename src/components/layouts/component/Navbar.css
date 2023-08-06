@@ -14,32 +14,39 @@
 }
 
 .navbar-btn{
-    /* flex:2   */
-    
     padding: 5px 20px;
     height: 50px;
     box-sizing: border-box;
 }
 
-/* .menu-nav > ul >  li{
-    height: 40px;
-    text-align: center;
-    margin: 0 0;
-    padding: 5px 20px;
-    box-sizing: border-box;
-    cursor: pointer;
-} */
-
 .navbar-btn:hover{
     background-color: rgba(203, 203, 209, 0.842);
 }
 
-/* ul{
-    margin: 0;
-    padding: 0;
+.toggle-navbar{
+    display : block;
+    position : absolute;
+    width:100vw;
+    height:100vh;
 }
 
-li{
-    list-style: none;
-} */
+@media only screen and (max-width:600px) {
+    .menu-nav-ul{
+        /* display: none */
+        width: 100vw;
+        height : 100vh;
+        flex-direction: column;
+        border : 1px solid red;
+        position: fixed;
+        top: 50px;
+        left: 0px;
+        background-color: white;
+        justify-content: flex-start;
+    }
 
+    .navbar-btn{
+        text-align: center;
+        width:100%;
+        font-size: 1.2rem;
+    }
+}

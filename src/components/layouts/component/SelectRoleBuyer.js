@@ -5,7 +5,7 @@ import {Link} from "react-router-dom"
 function SelectRoleBuyer() {
   return (
   <>
-    <div className='flex flex-col Select-role-block border min-w-xs max-w-sm p-2 bg-white rounded-lg'>
+    <div className='flex flex-col Select-role-block border md:min-w-xs max-w-sm p-2 bg-white rounded-lg'>
       <div className='mx-2'>
         <p className='text-lg font-mono text-justify'> You should go with this option if you do not wish to sell any product on the platform for a better buying experience </p>
       </div>

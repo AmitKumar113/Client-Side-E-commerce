@@ -10,23 +10,23 @@ export default function Profile() {
     //to add - address, email, mobile no, delete account option
     <>
     <div className='flex justify-center min-h-[80vh]'>
-    <div className='flex flex-col w-4/5 border my-2 px-8 [&>*]:my-3'>
+    <div className='flex flex-col w-full md:w-4/5 border my-2 px-8 [&>*]:my-3'>
         <div className='text-2xl text-center'>My Account</div>
         <div className='flex flex-col flex-1 [&>*]:my-2 [&>*]:py-2'>
           <div className={`w-40 h-40 border-2 border-gray-500/40 bg-[url(${user.avatar.url})] mx-auto bg-cover bg-center rounded-full`}>
           </div>
 
-          <div className='flex text-xl border-b-[1px]  [&>*]:mx-3'>
+          <div className='flex flex-wrap text-xl border-b-[1px]  [&>*]:mx-3'>
               <div>Full Name :</div>
               <div className='flex-1'>{user.name}</div>
-              <div className='text-sky-500 cursor-pointer hover:underline'>edit</div>
+              <div className='hidden text-sky-500 cursor-pointer hover:underline'>edit</div>
           </div>  
-          <div className='flex text-xl border-b-[1px] [&>*]:mx-3'>
+          <div className='flex flex-wrap text-xl border-b-[1px] [&>*]:mx-3'>
               <div>E-mail :</div>
               <div className='flex-1'>{user.email}</div>
-              <div className='text-sky-500 cursor-pointer hover:underline'>edit</div>
+              <div className='hidden text-sky-500 cursor-pointer hover:underline'>edit</div>
           </div> 
-          <div className='flex text-xl border-b-[1px] [&>*]:mx-3'>
+          <div className='flex flex-wrap text-ellipsis text-xl border-b-[1px] [&>*]:mx-3'>
               <div>Role :</div>
               <div className='flex-1'>{user.role}</div>
               {/* <div className='text-sky-500 cursor-pointer hover:underline'>edit</div> */}

@@ -42,19 +42,19 @@ const ProductDetails = () =>{
         <>
         { loading ?  ( <><Loader/></> ):(
         <div className='flex justify-center'>
-            <div className='w-4/5'>
-            <div className='details-conatiner bg-slate-300 flex m-5 p-3 justify-center min-h-2/3'>
+            <div className='w-full  md:w-4/5'>
+            <div className='details-conatiner bg-slate-300 flex flex-col md:flex-row m-5 p-3 justify-center min-h-2/3'>
                 {/* ❌ ERROR-solved : when state is not initialised cant accesss image url thats gives error 
                     solution  - need to initialise the product on starting or even better implement loading*/}
                 {
                 product.Stock ? (
-                    <div className={`bg-[url(${product.image.url})] bg-cover bg-center border-[1px] w-1/3 h-80`}></div>
+                    <div className={`bg-[url(${product.image.url})] bg-cover bg-center border-[1px] w-full md:w-1/3 h-80`}></div>
                     ):(
                         <div className={` bg-cover bg-center border-[1px] w-1/3 h-80`}></div>
                 )
                 }
                 
-                <div className='flex flex-col w-2/5 p-3 bg-white'>
+                <div className='flex flex-col w-full md:w-2/5 p-3 bg-white'>
                     <div className=' flex mb-2'>
                         <span className='text-2xl flex-1'>{product.name || "no name"}</span>
                     </div>
