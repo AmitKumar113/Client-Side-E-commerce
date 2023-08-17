@@ -36,8 +36,13 @@ export default function Navbar() {
     } 
 
     const handleMenuBarClick = ()=>{
+        const bar = document.querySelector('.menuBar')
         const ele = document.querySelector('.menu-nav-ul');
-        ele.classList.toggle('hidden')
+        console.log('window' +  window.innerWidth)
+        if(window.innerWidth < 768){
+            ele.classList.toggle('hidden')
+            console.log(bar)
+        }
     }
 
   return (
@@ -48,7 +53,7 @@ export default function Navbar() {
             </Link>
             
             <div className='menu-nav'>
-                <ul className='menu-nav-ul flex justify-center items-center' onClick={handleMenuBarClick }>
+                <ul className='menu-nav-ul hidden md:flex justify-center md:items-center' onClick={handleMenuBarClick }>
                         <Link to='/'  className='navbar-btn flex items-center'>Home</Link>
                         <Link to='/product/electronics'  className='navbar-btn flex items-center'>Products</Link>
                         <Link to='/about'  className='navbar-btn flex items-center'>About</Link>
@@ -99,7 +104,7 @@ export default function Navbar() {
             )
             }
                 {/* MENU ICON */}
-                <div className='md:hidden px-2 mr-2' onClick={handleMenuBarClick}>
+                <div className='menuBar md:hidden px-2 mr-2' onClick={handleMenuBarClick}>
                     <img src={menuIcon} alt="image"></img>
                 </div>
 
@@ -124,7 +129,7 @@ export default function Navbar() {
                     <div onClick={()=>showPopup()} className='flex fixed w-screen h-screen bg-slate-900 opacity-70 z-1'>
                     </div> 
                             {/* <div className='p-4 flex flex-col bg-white border-2  fixed w-1/3 h-1/4 z-2 top-1/2 left-1/2 transform translate-x-[-50%] translate-y-[-50%]'> */}
-                            <div className='p-4 flex flex-col bg-white border-2  fixed w-[500px] h-[200px] z-2 top-[300px] left-1/2 transform translate-x-[-50%] translate-y-[-50%]'>
+                            <div className='p-4 flex flex-col bg-white border-2  fixed w-11/12 md:w-[500px] h-[200px] z-2 top-[300px] left-1/2 transform translate-x-[-50%] translate-y-[-50%]'>
                                 <div className='flex-1'>
                                     <p className='text-2xl my-2'>are you sure?</p>
                                     <p>Do you want to logout?</p>
