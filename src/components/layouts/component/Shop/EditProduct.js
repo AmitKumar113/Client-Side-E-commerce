@@ -69,7 +69,7 @@ export default function EditProduct() {
     }
 
 
-    //❌ERROR : loading previous product value not able to update 'item' with product.
+    //loading previous product value not able to update 'item' with product.
     useEffect(()=>{
         console.log({id})
         dispatch(getProduct(id))
@@ -91,13 +91,13 @@ export default function EditProduct() {
     {/* {updateFields()} */}
     { loading ? (<Loader/>):(
       <div className=" flex justify-center items-center">
-        <div className="login-container flex flex-col w-1/3 py-4 bg-slate-300 my-8 ">
+        <div className="login-container flex flex-col w-11/12 md:w-1/3 py-4 bg-slate-300 my-8 ">
           <span className="text-center text-3xl py-8">Edit Product details</span>
           <form
             action="/addProduct"
             method="POST"
             enctype="multipart/form-data"
-            className="flex-box-column [&>*]:w-2/3 [&>input]:h-12 [&>*]:my-1 [&>input]:px-6"
+            className="flex-box-column [&>*]:w-11/12 md:[&>*]:w-2/3 [&>input]:h-12 [&>*]:my-1 [&>input]:px-6"
             onSubmit={handleSubmitChanges}
             // onChange={handleChange}
           >
